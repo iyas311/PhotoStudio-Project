@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  photo-studio-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: photo-studio
+  template:
+    metadata:
+      labels:
+        app: photo-studio
+    spec:
+      containers:
+        - name: photo-studio
+          image: iyask/photo-app:v1.1.0
+          ports:
+            - containerPort: 3000
