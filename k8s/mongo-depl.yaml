@@ -15,5 +15,9 @@ spec:
       containers:
         - name: mongodb
           image: mongo:latest
+          envFrom:
+            - configMapRef:
+                name: photo-studio-config
           ports:
             - containerPort: 27017
+        
