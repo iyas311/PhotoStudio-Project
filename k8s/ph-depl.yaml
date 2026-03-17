@@ -15,5 +15,8 @@ spec:
       containers:
         - name: photo-studio
           image: iyask/photo-app:v1.1.0
+          envFrom:
+            - configMapRef:
+                name: photo-studio-config
           ports:
             - containerPort: 3000
